@@ -5,6 +5,19 @@ set -o errtrace
 set -o nounset
 set -o pipefail
 
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
-docker rmi $(docker images -q)
+DOCKER_PROCESSES=$(docker ps -a -q)
+
+if [[ -z "$DOCKER_PROCESSES" ]]; then
+  echo "No running docker processes"
+else
+  docker stop $DOCKER_PROCESSES
+  docker rm $DOCKER_PROCESSES
+fi
+
+DOCKER_IMAGES=$(docker images -q)
+
+if [[ -z "$DOCKER_IMAGES" ]]; then
+  echo "No docker images found"
+else
+  docker rmi $DOCKER_IMAGES
+fi
