@@ -1,0 +1,14 @@
+#!/bin/sh
+current_dir=`pwd`
+
+echo "WARNING: This will recursively remove all .svn from ${current_dir}"
+echo "press ^C to cancel"
+
+for timer in 5 4 3 2 1
+do
+  echo "${timer}..\c"
+  sleep 1
+done
+echo "0"
+
+find . -name .svn -print0 | xargs -0 rm -vrf
