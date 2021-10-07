@@ -3,3 +3,4 @@
 mas outdated && mas upgrade && mas list
 brew update && brew upgrade && brew cu -cy
 softwareupdate -l
+asdf plugin update --all
