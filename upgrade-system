@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-/Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
+# /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app/Contents/MacOS/msupdate -i
 mas outdated && mas upgrade && mas list
 brew update && brew upgrade && brew cu -cy
 softwareupdate -l
