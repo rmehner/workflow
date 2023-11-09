@@ -23,3 +23,4 @@ else
 fi
 
 docker system prune --volumes
+docker volume prune --all
